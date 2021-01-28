@@ -24,6 +24,9 @@ public class Shortcuts {
     ctrl  + shift = / : 多行注释
 
     alt + shift + 上：上移当前行
+    shift+f6：选中变量名，批量修改名字
+    ctrl+n:查询相关类
+    ctrl+shift+u:变量大写转换
      */
     public static void main(String[] args) {
 

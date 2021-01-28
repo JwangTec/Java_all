@@ -6,6 +6,8 @@ package com.jwang.dmeo_3;
  * @USER: jwang
  * @DATE: 2021/1/27 下午5:37
  */
+
+//方法区存放.class文件的相关信息，比如成员变量和成员方法的相关代码
 public class mOOP {
     private String name;
     //private修饰成员，本类使用（成员变量，成员方法）

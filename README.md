@@ -1,5 +1,7 @@
 # Java基础练习整理
 
+## 基础知识 Java_demo_basic
+
 1.1 数据转换 com/jwang/demo_1/data_conversion.java
 
 * 隐式转换 
@@ -48,6 +50,34 @@
 * ArrayList
 
 1.9 git
+
+## 掌握知识  knowledge_demo
+
+1 标准类: 符合JavaBean的公共类 com/jwang/demo_1/Standard_Student.java
+2 匿名对象 com/jwang/demo_1/Anonymous_OOP.java
+3 继承 com/jwang/demo_2
+4 方法重写 
+5 this/super 
+6 抽象类 com/jwang/demo_2
+7 模版设计模式:抽象类及其实现类
+8 final关键字 com/jwang/dmeo_4/Final_test.java
+9 static关键字 com/jwang/dmeo_4/Static_Test.java
+10 接口(7:常量+抽象 8：默认+静态 9：私有)
+11 多态
+12 引用类型转型
+13 内部类
+14 匿名内部类
+15 类名作为参数和返回值都是其地址值，抽象类作为方法的参数和返回值（需要传入和返回该抽象类的子类对象，即匿名内部类）
+
+## 字符串
+
+1 String
+2 StringBuild (初始容量16)
+3 ArrayList
+
+## 权限修饰符
+
+
 
 
 

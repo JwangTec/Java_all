@@ -19,7 +19,6 @@ public class Control {
             System.out.println("success");
         } else if (age < 17) {
             System.out.println("success");
-        } else {
             System.out.println("su");
         }
 

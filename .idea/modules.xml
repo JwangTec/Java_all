@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Java_all.iml" filepath="$PROJECT_DIR$/.idea/Java_all.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_demo_basic/Java_demo_basic.iml" filepath="$PROJECT_DIR$/Java_demo_basic/Java_demo_basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/connections_demo/connections_demo.iml" filepath="$PROJECT_DIR$/connections_demo/connections_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/knowledge_demo/knowledge_demo.iml" filepath="$PROJECT_DIR$/knowledge_demo/knowledge_demo.iml" />
     </modules>
   </component>
 </project>
