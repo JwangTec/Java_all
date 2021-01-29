@@ -27,6 +27,7 @@ public class Shortcuts {
     shift+f6：选中变量名，批量修改名字
     ctrl+n:查询相关类
     ctrl+shift+u:变量大写转换
+    ctrl+alt+:抽取代码变方法
      */
     public static void main(String[] args) {
 

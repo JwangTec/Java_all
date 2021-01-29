@@ -58,24 +58,55 @@
 * 3 继承 com/jwang/demo_2
 * 4 方法重写 
 * 5 this/super 
-* 6 抽象类 com/jwang/demo_2
+* 6 抽象类 com/jwang/demo_3
 * 7 模版设计模式:抽象类及其实现类
 * 8 final关键字 com/jwang/dmeo_4/Final_test.java
 * 9 static关键字 com/jwang/dmeo_4/Static_Test.java
-* 10 接口(7:常量+抽象 8：默认+静态 9：私有) com/jwang/demo_5
+* 10 接口(7:常量+抽象 8：默认+静态 9：私有) com/jwang/demo_5 
 * 11 多态 com/jwang/demo_5
 * 12 引用类型转型 com/jwang/demo_5
 * 13 内部类 com/jwang/demo_6
 * 14 匿名内部类 com/jwang/demo_6
 * 15 类名作为参数和返回值都是其地址值，抽象类作为方法的参数和返回值（需要传入和返回该抽象类的子类对象，即匿名内部类）
+* 16 权限修饰符 com/jwang/demo_7
+* 17 代码块
 
-## 字符串 connections_demo/
+## 集合 connections_demo/
+
+### 字符串
 
 * 1 String /demo_1
 * 2 StringBuild (初始容量16)
-* 3 ArrayList  demo_2
 
-## 权限修饰符
+### 单列集合 
+
+* Collection
+* 3 ArrayList  demo_2
+* 单列集合
+* 迭代器
+* 增强for循环
+* 泛型:限制数据类型  //泛型通配符
+* List接口
+* Collections工具类
+* 可变参数...
+* set集合
+
+### 双列集合
+
+* Map集合
+
+## API API_demo
+
+* Object  com/jwang/demo_object
+* Date DateFormat(abstract) com/jwang/demo_date
+* Calendar(abstract)
+* Math (static)
+* System (static)
+* BigInteger com/jwang/demo_Big_
+* BigDecimal
+* Arrays(static)
+* 包装类
+* 基本类型--字符串：（+空字符串）/（valueOf(任意数据类型) -- static）// parseXxx(String s)--static 
 
 
 

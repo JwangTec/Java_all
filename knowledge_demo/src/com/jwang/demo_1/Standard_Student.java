@@ -2,7 +2,7 @@ package com.jwang.demo_1;
 
 /**
  * @PROJECT_NAME: Java_stu_all
- * @DESCRIPTION:
+ * @DESCRIPTION: 标准类
  * @USER: jwang
  * @DATE: 2021/1/28 下午1:43
  */

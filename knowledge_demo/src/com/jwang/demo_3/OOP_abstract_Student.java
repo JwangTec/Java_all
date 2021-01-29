@@ -50,6 +50,4 @@ public abstract class OOP_abstract_Student {
             供子类重写
      */
     public abstract void show1();
-
-    ;
 }
