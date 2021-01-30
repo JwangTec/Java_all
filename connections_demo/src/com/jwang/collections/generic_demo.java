@@ -12,6 +12,7 @@ public class generic_demo {
     public static void main(String[] args) {
         /**
          * - 泛型不存在多态
+         *      -- 定义泛型类或者接口 类名/接口名<泛型>{}
          * - 泛型通配符：？ 表示未知通配符
          * - 泛型通配符的受限
          *          -- 上限： <? extend XX>  只能接收XX类型及其子类类型
@@ -24,6 +25,13 @@ public class generic_demo {
         ArrayList<Number> nu = new ArrayList<>();
 
     }
+
+    public static <E> void method0(E e){
+        /**
+         * 定义泛型方法
+         */
+    }
+
 
     public static void method(ArrayList<?> list){
                 /*
