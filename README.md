@@ -115,20 +115,20 @@
 
 ## 排序算法、异常、多线程
 
-### 排序算法
+### 排序算法 SEC_demo/com/jwang/sort_demo
 
 * 冒泡排序 
 * 选择排序
 * 二分查找
 
-### 异常
+### 异常 SEC_demo/com/jwang/Exception_demo
 
 * 异常
 * 异常捕获
 * 异常处理
 * 自定义异常
 
-### 并发与并行
+### 并发与并行 SEC_demo/com/jwang/Cu_demo/Thread_demo.java
 
 * 并发：交替执行
 * 并行：同时执行
@@ -140,6 +140,18 @@
 
 * Thread类
 
+## 线程安全、volatile、原子性，并发包、死锁、线程池 SVA_demo/
+
+* 多条线程操作共享变量，会出现混乱问题--线程调度为抢占式 
+* synchronized关键字:悲观锁-重量级锁 同步 将"多行代码"进行同步，只有这一块执行完才会执行下一个线程 S_demo/sync_demo.java
+* Lock锁：同步锁，加锁、释放锁方法化 S_demo/sync_demo.java
+* 同步代码块与同步方法共用--锁对象选择 S_demo/sync_demo.java
+* 多线程安全性问题--可见性、有序性、原子性 Soft_demo/soft_main.java
+* volatile关键字 --可以解决原子性，可同时执行，用于变量上
+* 原子类 atomic atomic_demo/Atomic_demo.java
+* 并发包 COMASoft_demo/CopyOnWriteArrayXX_main.java
+* 线程池 ThreadTool_demo
+* 死锁:多个线程中，使用多把锁，造成线程间等待，有同步代码块嵌套 -- 可能出现
 
 
 
