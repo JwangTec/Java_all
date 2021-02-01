@@ -153,6 +153,41 @@
 * 线程池 ThreadTool_demo
 * 死锁:多个线程中，使用多把锁，造成线程间等待，有同步代码块嵌套 -- 可能出现
 
+* 线程状态 -- 6种 new--Runnable（start（））--Blocked锁阻塞--waiting（调用wait()）--Timed Waiting计时等待 锁对象调用wait(time)/sleep()--Terminated(run()终止，或者产生异常)、
+
+> 调用wait（）和notify都需要使用相同的锁对象
+> 使用锁对象调用wait（）进入无限等待，再使用锁对象调用notify被唤醒判断是否获取到锁，没锁--锁阻塞，有锁--runnable
+> 线程调用Thread.sleep方法--计时等待 时间到--runnable  ｜ 锁对象调用wait(timeout) -- 计时等待 时间到，判断锁，时间没到被其他线程唤醒，判断锁
+
+* 等待唤醒机制--多线程之间的一种协作机制 wait/notify  让线程依次进入无限等待，再唤醒 WaitNotify_demo/WN_main.java
+
+>生产者--消费者案例
+>使用锁对象调用wait进入无限等待
+>使用相同锁对象notify/notifyAll唤醒对应线程进入无限等待
+>若一个线程释放了锁，它还是会去竞争锁
+>在同步代码中调用sleep方法，不会释放锁，只是不抢占cpu
+
+* Lambda表达式  Lambda_demo/Lambda_main.java
+* Stream流  Stream_demo/Stream_main.java
+
+## 文件操作，IO流 IOandFile
+
+* file 类 IOandFile/src/File_demo
+* 递归
+
+* IO流 IOandFile/src/IO_demo
+* 字节流 IOandFile/src/IO_demo
+* 字符流 IOandFile/src/IO_demo
+
+* IO异常处理
+* 属性集-Properties类
+* 缓冲流
+* 转换流
+* 序列化和反序列流
+* 打印流
+* 装饰器模式
+* commons-io工具包
+
 
 
 
