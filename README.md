@@ -181,15 +181,38 @@
 
 * IO异常处理
 * 属性集-Properties类
-* 缓冲流
-* 转换流
-* 序列化和反序列流
-* 打印流
-* 装饰器模式
-* commons-io工具包
+* 缓冲流 -- 对输入输出流进行增强，BufferedXXX 会默认创建一个缓冲字节数组：8192大小 --读写效率快
+* 转换流 -- 字符编码、字符集 解决乱码问题等
+* 序列化和反序列流 -- 使用字节序列表示一个对象，持久保存和读取一个对象的信息 ObjectInputStream/ObjectOutputStream
+* 打印流 --PrintStream
+* 装饰器模式 : 不改变原类，不使用继承的基础上动态扩展一个对象的功能
+* commons-io工具包： apache提供的有关IO操作的类库
 
 
+## 网络编程、NIO
 
+* 网络编程三要素：ip,tcp/udp,端口
+* InetAddress类：IP地址对象 静态方法：getLocalHost/getByName(String Host) -- 主机名获取ip /getHostName/getHostAddress
+* tcp协议：面相连接 Socket(客服端)-IO流-ServerSocket（服务端）
+* c/s
+* b/s：注意图片上传需要开启线程
+* 同步与异步
+
+> 同步：调用方法后，必须有一个返回值
+>
+>异步：调用方法后，不需要返回值，但有一个回调函数（满足条件后自动执行的方法）
+>
+* 阻塞和非阻塞
+
+> 阻塞：若没有达到方法的目的，就会一直等待：ServerSocket的accept方法
+>
+>非阻塞：不管方法有没有达到目的，都直接往下执行
+>
+>IO：同步阻塞 --面相流  Java1。4 面相块：NIO：同步非阻塞--Buffer/Channel/Selector，Java1.7: （NIO 2）AIO：异步非阻塞
+
+* Buffer类（缓冲区）-- nio.Buffer：是一个对象，对基本类型的数组进行封装：ByteBuffer,CharBuffer,NIO中通过Buffer读取数据，所有数据通过Buffer来处理，为NIO读写数据的中转池
+* Channel
+* Selector
 
 
 
