@@ -156,15 +156,21 @@
 * 线程状态 -- 6种 new--Runnable（start（））--Blocked锁阻塞--waiting（调用wait()）--Timed Waiting计时等待 锁对象调用wait(time)/sleep()--Terminated(run()终止，或者产生异常)、
 
 > 调用wait（）和notify都需要使用相同的锁对象
+>
 > 使用锁对象调用wait（）进入无限等待，再使用锁对象调用notify被唤醒判断是否获取到锁，没锁--锁阻塞，有锁--runnable
+>
 > 线程调用Thread.sleep方法--计时等待 时间到--runnable  ｜ 锁对象调用wait(timeout) -- 计时等待 时间到，判断锁，时间没到被其他线程唤醒，判断锁
 
 * 等待唤醒机制--多线程之间的一种协作机制 wait/notify  让线程依次进入无限等待，再唤醒 WaitNotify_demo/WN_main.java
 
 >生产者--消费者案例
+>
 >使用锁对象调用wait进入无限等待
+>
 >使用相同锁对象notify/notifyAll唤醒对应线程进入无限等待
+>
 >若一个线程释放了锁，它还是会去竞争锁
+>
 >在同步代码中调用sleep方法，不会释放锁，只是不抢占cpu
 
 * Lambda表达式  Lambda_demo/Lambda_main.java
@@ -182,7 +188,7 @@
 * IO异常处理
 * 属性集-Properties类
 * 缓冲流 -- 对输入输出流进行增强，BufferedXXX 会默认创建一个缓冲字节数组：8192大小 --读写效率快
-* 转换流 -- 字符编码、字符集 解决乱码问题等
+* 转换流 -- 字符编码、字符集 解决乱码问题等 InputStreamReader:字节转字符输入流
 * 序列化和反序列流 -- 使用字节序列表示一个对象，持久保存和读取一个对象的信息 ObjectInputStream/ObjectOutputStream
 * 打印流 --PrintStream
 * 装饰器模式 : 不改变原类，不使用继承的基础上动态扩展一个对象的功能
