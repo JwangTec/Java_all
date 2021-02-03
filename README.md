@@ -220,7 +220,23 @@
 * Channel
 * Selector
 
+* AIO：通道使用异步通道：AsynchronousSocketChannel ...方法与NIO差不多
 
+> 进行事件处理(read,write,accept,connect)时需要指定事件处理类-CompletionHandler<V,A>（回调函数）
+>> 回调函数有两个方法：completed(V result)和failed(Throwable)
+
+## 反射、注解、动态代理
+
+* 类加载器
+* 反射
+* 注解
+* 代理模式--proxy
+* 方法引用-- ：： --代替lambda表达式（表达式与另一个方法中的代码一样或者就是调用另一个方法，可以使用方法引用）
+* Base64编码器：基本/URL/MIME
+
+## XML、Dom4J、pattern表达式
+
+* xml：可扩展标记语言，传输数据的，不是显示数据的，需要自定义标签，W3C推荐标准，HTML显示数据的
 
 
     

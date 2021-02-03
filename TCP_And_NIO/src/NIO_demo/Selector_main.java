@@ -2,10 +2,13 @@ package NIO_demo;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -60,14 +63,40 @@ public class Selector_main {
 
         //循环接收客户端连接
         while (true){
+            //等待连接
             selector.select();
             //获取所有被连接的通道
             final Set<SelectionKey> keySet = selector.selectedKeys();
             //遍历所有通道
-            for (SelectionKey key : keySet) {
-                //获取对应的服务器通道
-               ServerSocketChannel ssc =  (ServerSocketChannel) key.channel();
-                final SocketChannel channel111 = ssc.accept();
+            //无法删除
+//            for (SelectionKey key : keySet) {
+//                //获取对应的服务器通道
+//               ServerSocketChannel ssc =  (ServerSocketChannel) key.channel();
+//               //建立其连接
+//                final SocketChannel sc = ssc.accept();
+//                final ByteBuffer buffer = ByteBuffer.allocate(1024);
+//                final int read = sc.read(buffer);
+//                System.out.println(new String(buffer.array(),0,read));
+//            }
+
+            final Iterator<SelectionKey> it = keySet.iterator();
+            while (it.hasNext()) {
+                //获取当前通道名
+                SelectionKey key = it.next();
+                //使用该通道
+                ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
+                //连接通道
+                final SocketChannel sc = ssc.accept();
+                //创建字节缓冲区
+                final ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+                //使用通道获取数据存入缓冲区
+                final int len = sc.read(byteBuffer);
+                System.out.println(new String(byteBuffer.array(), 0,len));
+                sc.close();
+                //从所有注册的已连接通道中删除
+                it.remove();
+
+
             }
         }
 
