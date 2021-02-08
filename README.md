@@ -258,7 +258,76 @@
 * 字符串的相关函数
 
 * JDBC：连接的接口，其各个实现类就是其连接的具体方法
+* POJO编写规范
+* JDBC工具类封装--硬编码问题--properties对象（ResourceBundle.getBundle(文件名)  -getString(key)）
+* SQL注入--使用预编译对象进行占位赋值
+* JDBC操作事务--setAutoCommit(false)--commit()--出现异常进行回滚（rollback）
+* 普通BUG解决方法：
 
- 
+> 异常类型 -- course/course by 导致原因-- 出错问题：第一个蓝色，自己写的代码
 
-    
+* 连接池:解决普通JDBC连接频繁创建和销毁所带来的系统开销，高并发会有许多连接导致内存溢出或者服务器崩溃
+
+>linkedList作为容器（增加和删除快）初始化创建多个连接，执行sql语句：有连接存在 - 获取-头部删除(removeFirst) 用完之后 - 归还-尾部添加（addLast）  
+>
+>连接用完-判断正在使用的连接数-没有达到最大--则新创建（用完归还连接池，连接池有一个属性-最大闲置连接数，闲时会销毁新创建连接，维持使其小于最大）
+>
+>-达到最大--进入等待队列（超时限定-超时报错-将使用时间最长的强制归还）
+
+> 解决连接池耦合：连接池实现官方DataSource接口，使用直接反射创建，接口类对象进行接收连接即可--该接口的实现类没有归还连接的方法
+>
+>归还连接解决：连接对象.close() 为连接池原本对象不是销毁而是归还连接池，新创建销毁--动态代理-装饰着模式
+>
+>动态代理：增强Connection的close方法，不是执行原方法(method.invoke(connection,args))是就将代理连接对象添加到连接池
+>
+>装饰着模式：创建连接使用装饰者模式（wrapper装饰者实现Connection接口并重写相关方法--出现依赖倒置原则：尽量依赖抽象，不依赖具体）放在连接池中的就是装饰者连接重写close执行归还操作，未放就是原连接，执行原来的销毁方法
+
+* 第三方连接池：C3P0(spring /hibernate使用)  DRUID连接池 --将其封装在一个工具类中并在静态代码块中创建连接池-单例
+
+> DruidDataSourceFactory.createDataSource
+>
+>ComboPooledDataSource
+
+* DBUtils：JDBC简单框架：解决执行sql语句繁琐，结果集的处理麻烦 
+
+> QueryRunner对象，构造函数中传入datasource（使用连接池获取）对象 ，然后调用该对象方法update(sql),query(sql)执行语句
+
+* 元数据：框架使用的
+
+>DataBaseMetaData 数据库元数据:数据库相关信息
+>
+>ParameterMetaData:参数元数据：包含SQL语句参数个数等信息
+>
+>ResultSetMetaData:结果集元数据：结果集相关信息：个数、列名--POJO需要与此对应一样
+>
+
+* 内省机制 ：操作JAVABEAN的属性的相关get/set方法，使用的类PropertyDescriptor:属性描述器 ,.getWriteMethod()获取get方法，.invoke()运行
+
+
+## html、JS
+
+* 标签：a、img、
+* 表单form-包裹表单项，指定向服务器传送的地址等（action：提交路径，method：提交方式，默认get）--文本框/单选多选框/文件选择框等（input），下拉框(select),文本域(textarea)
+
+* JS：处理用户和页面交互
+
+> 函数：调用时传入参数个数和声明时候的可以不一致、没有重载
+>
+>事件：两种绑定（动态-匿名函数绑定+静态-直接在标签上绑定事件方法名），常见事件：焦点、页面加载、内容改变、鼠标、键盘
+>
+>BOM：window对象-三种弹窗，两个定时器/location对象--href代表浏览器地址栏地址，可以通过location.href获取、设置、访问
+
+## JAVA EE 
+
+### http
+
+* http：超文本传输协议
+* 状态码
+* 常见web服务器：WebLogic：使用较多的，支持J2EE规范，用于开发、集成、部署和管理大型分布式web应用、网络应用和数据库应用的Java应用服务器/tomcat服务器：并发量500
+
+### tomcat
+
+* url:统一资源定位符
+* 项目虚拟路径映射：conf/catalina/localhost文件中创建xml文件进行配置docBase标签--访问xml文件名即虚拟路径就可以访问到相关真实路径下的页面
+
+### servlet
